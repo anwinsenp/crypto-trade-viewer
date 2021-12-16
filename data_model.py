@@ -28,11 +28,12 @@ class DataModel(QAbstractTableModel):
         return len(list(self.entries.values())[0]) - 2 if len(self.entries) > 0 else 0
 
     def data(self, index: QModelIndex, role: int = ...) -> Any:
-        if len(self.entries) <= 0:
-            return QVariant()
-
         row = index.row()
         col = index.column()
+
+        if len(self.entries) <= 0 or row < 0 or col < 0:
+            return QVariant()
+
         if role == Qt.DisplayRole:
             return QVariant(list(self.entries.values())[row][col])
 

@@ -74,4 +74,3 @@ class InstrumentModel(DataModel):
                     fill_color,
                     font_color
                 ]
-                self.modelReset.emit()

@@ -29,12 +29,9 @@ class MainWindow(QMainWindow):
         instrument_ws_client.connectToHost(
             "wss://ws.bitmex.com/realtime?subscribe=instrument")
 
-        instrument_vboxlayout = QVBoxLayout(self)
+        instrument_vboxlayout = QVBoxLayout()
         instrument_vboxlayout.addWidget(instrument_label)
         instrument_vboxlayout.addWidget(instrument_table)
-
-        instrument_widget = QWidget(self)
-        instrument_widget.setLayout(instrument_vboxlayout)
 
         # Bitmex Instrument topic table
         orderbook_label = QLabel("Bitmex - topic: orderbook, action: insert")
@@ -52,17 +49,14 @@ class MainWindow(QMainWindow):
         orderbook_ws_client.connectToHost(
             "wss://ws.bitmex.com/realtime?subscribe=orderBookL2")
 
-        orderbook_vboxlayout = QVBoxLayout(self)
+        orderbook_vboxlayout = QVBoxLayout()
         orderbook_vboxlayout.addWidget(orderbook_label)
         orderbook_vboxlayout.addWidget(orderbook_table)
 
-        orderbook_widget = QWidget(self)
-        orderbook_widget.setLayout(orderbook_vboxlayout)
-
-        central_hboxlayout = QHBoxLayout(self)
-        central_hboxlayout.addWidget(instrument_widget)
-        central_hboxlayout.addWidget(orderbook_widget)
-        central_widget = QWidget(self)
+        central_hboxlayout = QHBoxLayout()
+        central_hboxlayout.addLayout(instrument_vboxlayout)
+        central_hboxlayout.addLayout(orderbook_vboxlayout)
+        central_widget = QWidget()
         central_widget.setLayout(central_hboxlayout)
 
         self.setCentralWidget(central_widget)

@@ -3,6 +3,7 @@ from typing import (
     Any
 )
 from PyQt5.QtCore import (
+    QModelIndex,
     QObject,
     Qt,
     QVariant
@@ -74,4 +75,3 @@ class OrderbookModel(DataModel):
                     fill_color,
                     font_color
                 ]
-                self.modelReset.emit()
