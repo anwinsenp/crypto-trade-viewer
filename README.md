@@ -4,7 +4,7 @@ Trade viewer is a GUI application written in PyQt5, to visualize crypto currency
 * topic: instrument, action: update
 * topic: orderbookL2, action: insert
 
-![Trade Viewer](trade_viewer.mp4)
+![Trade Viewer](trade_viewer.gif)
 
 ## Getting started
 
