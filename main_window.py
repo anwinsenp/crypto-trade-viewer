@@ -14,6 +14,7 @@ class MainWindow(QMainWindow):
 
         self.setWindowTitle("Trade Viewer")
 
+        # Bitmex instrument topic table
         instrument_label = QLabel("Bitmex - topic: instrument, action: update")
         instrument_table = DataTableView(self)
         instrument_table.setSortingEnabled(True)
@@ -33,7 +34,7 @@ class MainWindow(QMainWindow):
         instrument_vboxlayout.addWidget(instrument_label)
         instrument_vboxlayout.addWidget(instrument_table)
 
-        # Bitmex Instrument topic table
+        # Bitmex orderbook topic table
         orderbook_label = QLabel("Bitmex - topic: orderbook, action: insert")
         orderbook_table = DataTableView(self)
         orderbook_table.setSortingEnabled(True)
